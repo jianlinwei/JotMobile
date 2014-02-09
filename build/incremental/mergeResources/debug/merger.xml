@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res" >
+            <file
+                name="button_toggle"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/drawable/button_toggle.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="drawer_border"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/drawable/drawer_border.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="format_bar_bg"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/drawable/format_bar_bg.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="format_bar_btn"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/drawable/format_bar_btn.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="format_bar_btn_toggled"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/drawable/format_bar_btn_toggled.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="image_button"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/drawable/image_button.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="save_border"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/drawable/save_border.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="separator"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/drawable/separator.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="drawer_shadow"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/drawable-hdpi/drawer_shadow.9.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_center"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/drawable-hdpi/ic_center.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_drawer"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/drawable-hdpi/ic_drawer.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/drawable-hdpi/ic_launcher.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_menu"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/drawable-hdpi/ic_menu.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_options"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/drawable-hdpi/ic_options.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_test"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/drawable-hdpi/ic_test.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="cursor"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/drawable-mdpi/cursor.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="drawer_shadow"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/drawable-mdpi/drawer_shadow.9.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_drawer"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/drawable-mdpi/ic_drawer.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/drawable-mdpi/ic_launcher.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="drawer_shadow"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/drawable-xhdpi/drawer_shadow.9.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_drawer"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/drawable-xhdpi/ic_drawer.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/drawable-xhdpi/ic_launcher.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="drawer_shadow"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/drawable-xxhdpi/drawer_shadow.9.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ic_drawer"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/drawable-xxhdpi/ic_drawer.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/drawable-xxhdpi/ic_launcher.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="activity_main"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/layout/activity_main.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="drawer_listview_item"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/layout/drawer_listview_item.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="layout_save"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/layout/layout_save.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="main"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/menu/main.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/values/dimens.xml"
+                qualifiers="" >
+                <dimen name="format_bar_height" >40dp
+                </dimen>
+                <dimen name="format_bar_font_size" >17dp
+                </dimen>
+                <dimen name="activity_horizontal_margin" >16dp
+                </dimen>
+                <dimen name="activity_vertical_margin" >16dp
+                </dimen>
+                <dimen name="format_bar_button_padding" >4dp
+                </dimen>
+            </file>
+            <file
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/values/strings.xml"
+                qualifiers="" >
+                <string name="action_settings" >Settings
+                </string>
+
+                <string-array name="items1" >
+                    <item>
+Save
+                    </item>
+                    <item>
+Open
+                    </item>
+                    <item>
+Export
+                    </item>
+                    <item>
+Clear
+                    </item>
+                    <item>
+New Document
+                    </item>
+                </string-array>
+
+                <string name="app_name" >Jot
+                </string>
+                <string name="text" >Hello World
+                </string>
+
+                <string-array name="items2" >
+                    <item>
+Undo
+                    </item>
+                    <item>
+Redo
+                    </item>
+                    <item>
+Page Color
+                    </item>
+                    <item>
+Bullets
+                    </item>
+                    <item>
+Insert Image
+                    </item>
+                    <item>
+About Jot
+                    </item>
+                    <item>
+Help
+                    </item>
+                </string-array>
+
+                <string name="drawer_open" >Open Drawer
+                </string>
+                <string name="hello_world" >Hello world!
+                </string>
+                <string name="strike" ><strike>
+ABC
+                    </strike></string>
+                <string name="underline" ><u>
+U
+                    </u></string>
+                <string name="drawer_close" >Close Drawer
+                </string>
+            </file>
+            <file
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/values/styles.xml"
+                qualifiers="" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Light" >
+
+                    <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+                    -->
+                </style>
+
+                <style name="ToggleButton" >
+                    <item name="android:textSize">
+@dimen/format_bar_font_size
+                    </item>
+                    <item name="android:minHeight">
+26dp
+                    </item>
+                    <item name="android:textColor">
+#464646
+                    </item>
+                    <item name="android:paddingLeft">
+@dimen/format_bar_button_padding
+                    </item>
+                    <item name="android:paddingRight">
+@dimen/format_bar_button_padding
+                    </item>
+                    <item name="android:background">
+@drawable/button_toggle
+                    </item>
+                </style>
+
+                <style
+                    name="AppTheme"
+                    parent="AppBaseTheme" >
+
+                    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+                </style>
+            </file>
+            <file
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/values-sw720dp-land/dimens.xml"
+                qualifiers="sw720dp-land" >
+                <dimen name="activity_horizontal_margin" >128dp
+                </dimen>
+            </file>
+            <file
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/values-v11/styles.xml"
+                qualifiers="v11" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light" >
+
+                    <!-- API 11 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/values-v14/styles.xml"
+                qualifiers="v14" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light.DarkActionBar" >
+
+                    <!-- API 14 theme customizations can go here. -->
+                </style>
+            </file>
+        </source>
+        <source path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/build/res/rs/debug" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/build-types/debug/res" />
+    </dataSet>
+
+</merger>

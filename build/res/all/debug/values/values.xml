@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/Users/noahlutz/Documents/Android%20Dev/Jot%20Workspaces/JotMobile/res/values/strings.xml -->
+    <eat-comment />
+
+    <string-array name="items1">
+        <item>Save</item>
+        <item>Open</item>
+        <item>Export</item>
+        <item>Clear</item>
+        <item>New Document</item>
+    </string-array>
+    <string-array name="items2">
+        <item>Undo</item>
+        <item>Redo</item>
+        <item>Page Color</item>
+        <item>Bullets</item>
+        <item>Insert Image</item>
+        <item>About Jot</item>
+        <item>Help</item>
+    </string-array>
+    <!-- From: file:/Users/noahlutz/Documents/Android%20Dev/Jot%20Workspaces/JotMobile/res/values/dimens.xml -->
+    <eat-comment />
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="format_bar_button_padding">4dp</dimen>
+    <dimen name="format_bar_font_size">17dp</dimen>
+    <dimen name="format_bar_height">40dp</dimen>
+    <!-- From: file:/Users/noahlutz/Documents/Android%20Dev/Jot%20Workspaces/JotMobile/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="action_settings">Settings</string>
+    <string name="app_name">Jot</string>
+    <string name="drawer_close">Close Drawer</string>
+    <string name="drawer_open">Open Drawer</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="strike"><strike>ABC</strike></string>
+    <string name="text">Hello World</string>
+    <string name="underline"><u>U</u></string>
+    <!-- From: file:/Users/noahlutz/Documents/Android%20Dev/Jot%20Workspaces/JotMobile/res/values/styles.xml -->
+    <eat-comment />
+
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="ToggleButton">
+        <item name="android:textSize">@dimen/format_bar_font_size</item>
+        <item name="android:minHeight">26dp</item>
+        <item name="android:textColor">#464646</item>
+        <item name="android:paddingLeft">@dimen/format_bar_button_padding</item>
+        <item name="android:paddingRight">@dimen/format_bar_button_padding</item>
+        <item name="android:background">@drawable/button_toggle</item>
+    </style>
+
+</resources>

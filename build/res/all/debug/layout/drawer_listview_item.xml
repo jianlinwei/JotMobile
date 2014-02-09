@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:id="@+id/container"
+    android:minHeight="64dp"
+    
+    android:divider="@android:color/white"
+    android:showDividers="middle">
+
+    <ImageView
+            android:id="@+id/icon"
+            android:layout_width="32dp" 
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentTop="true"/>
+        
+    <TextView
+            android:layout_alignBottom="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text1"
+            android:textColor="#fff"
+            android:text="Hello"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="9dp"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"/>
+
+</RelativeLayout><!-- From: file:/Users/noahlutz/Documents/Android%20Dev/Jot%20Workspaces/JotMobile/res/layout/drawer_listview_item.xml -->

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/assets" >
+            <file
+                name="ic_6-social-share.png"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/assets/ic_6-social-share.png" />
+            <file
+                name="ic_about.png"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/assets/ic_about.png" />
+            <file
+                name="ic_action_android.png"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/assets/ic_action_android.png" />
+            <file
+                name="ic_action_google_play.png"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/assets/ic_action_google_play.png" />
+            <file
+                name="ic_bullets.png"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/assets/ic_bullets.png" />
+            <file
+                name="ic_center.png"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/assets/ic_center.png" />
+            <file
+                name="ic_clear.png"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/assets/ic_clear.png" />
+            <file
+                name="ic_help.png"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/assets/ic_help.png" />
+            <file
+                name="ic_insert_image.png"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/assets/ic_insert_image.png" />
+            <file
+                name="ic_justified.png"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/assets/ic_justified.png" />
+            <file
+                name="ic_left.png"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/assets/ic_left.png" />
+            <file
+                name="ic_menu.png"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/assets/ic_menu.png" />
+            <file
+                name="ic_new_doc.png"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/assets/ic_new_doc.png" />
+            <file
+                name="ic_open.png"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/assets/ic_open.png" />
+            <file
+                name="ic_page_color.png"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/assets/ic_page_color.png" />
+            <file
+                name="ic_redo.png"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/assets/ic_redo.png" />
+            <file
+                name="ic_right.png"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/assets/ic_right.png" />
+            <file
+                name="ic_save.png"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/assets/ic_save.png" />
+            <file
+                name="ic_undo.png"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/assets/ic_undo.png" />
+        </source>
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/build-types/debug/assets" />
+    </dataSet>
+
+</merger>

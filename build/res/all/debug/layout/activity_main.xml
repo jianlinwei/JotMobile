@@ -1,0 +1,121 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:orientation = "vertical"
+     android:id="@+id/frame">
+     
+	 <android.support.v4.widget.DrawerLayout 
+	 	xmlns:tools="http://schemas.android.com/tools"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:id="@+id/drawer_layout">
+	    	
+	    <ScrollView
+	    	android:layout_height="wrap_content"
+	        android:layout_width="match_parent"
+	        android:layout_below="@+id/title_box"
+	        android:id="@+id/scrollView">
+	    	<com.noahl98.jotmobile.RichText 
+	    	    android:layout_height ="wrap_content"
+	    	    android:layout_width ="match_parent"
+	        	android:id="@+id/edit_text"
+	        	android:minLines="22"
+	        	android:gravity="top"/>
+	    </ScrollView>
+	    <ListView 
+	        android:layout_width="240dp"
+	        android:layout_height="match_parent"
+	        android:layout_gravity="start"
+	        android:choiceMode="singleChoice"
+	        android:divider="@android:color/transparent"
+	        android:dividerHeight="0dp"
+	        android:background="#992E2E2E"
+	        android:id="@+id/left_drawer"/>
+	    <ListView
+	        android:layout_width="240dp"
+	        android:layout_height="match_parent"
+	        android:layout_gravity="end"
+	        android:choiceMode="singleChoice"
+	        android:divider="@android:color/transparent"
+	        android:dividerHeight="0dp"
+	       	android:background="#992E2E2E"
+	        android:id="@+id/right_drawer" />
+	    
+	</android.support.v4.widget.DrawerLayout>
+	
+	<RelativeLayout
+		android:id="@+id/formatBar"
+	    android:layout_width="fill_parent"
+	    android:layout_height="@dimen/format_bar_height"
+	    android:layout_gravity="bottom"
+	    android:background="@drawable/format_bar_bg"
+	    android:orientation="horizontal"
+	    android:padding="4dp"
+	    android:visibility="visible">
+	    
+	    	
+	    <HorizontalScrollView 
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginRight="34dp">
+	        	
+	        <RelativeLayout 
+	        	android:layout_height="wrap_content"
+	            android:layout_width="wrap_content">
+	                
+	            <ToggleButton 
+	            	android:id="@+id/bold"
+	                style="@style/ToggleButton"
+	                android:layout_height="fill_parent"
+	                android:layout_width="wrap_content"
+	                android:textOn="B"
+	                android:textOff="B"
+	                android:textStyle="bold"/>
+	            <ToggleButton 
+	                android:id="@+id/ital"
+	                style="@style/ToggleButton"
+	                android:layout_height="fill_parent"
+	                android:layout_width="wrap_content"
+	                android:layout_marginLeft="6dp"
+	                android:layout_toRightOf="@+id/bold"
+	                android:textOff="I"
+	                android:textOn="I"
+	                android:textStyle="italic"/>
+	            <ToggleButton 
+	                android:id="@+id/underline"
+	                style="@style/ToggleButton"
+	                android:layout_height="fill_parent"
+	                android:layout_width="wrap_content"
+                 	android:layout_marginLeft="6dp"
+                    android:layout_toRightOf="@+id/ital"
+                   	android:textOff="@string/underline"
+                   	android:textOn="@string/underline"/>
+                <ToggleButton 
+                   	android:id="@+id/strike"
+                   	style="@style/ToggleButton"
+                   	android:layout_height="fill_parent"
+                   	android:layout_width="wrap_content"
+                   	android:layout_marginLeft="6dp"
+                   	android:layout_toRightOf="@+id/underline"
+                   	android:textOff="@string/strike"
+               	    android:textOn="@string/strike"/>
+                <View 
+                    android:id="@+id/separator"
+                    android:background="@drawable/separator"
+                    android:layout_height="fill_parent"
+                    android:layout_width="2dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_toRightOf="@+id/strike"/>
+                <ImageButton 
+                    android:id="@+id/alignment"
+                    android:layout_height="fill_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:layout_toRightOf="@+id/separator"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_options"
+                    android:background="@drawable/image_button"/>
+           	</RelativeLayout>
+       	</HorizontalScrollView>
+   	</RelativeLayout>
+</FrameLayout><!-- From: file:/Users/noahlutz/Documents/Android%20Dev/Jot%20Workspaces/JotMobile/res/layout/activity_main.xml -->

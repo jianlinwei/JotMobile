@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Jot</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name = "text">Hello World</string>
+    <string-array name="items1">
+        <item>Save</item>
+        <item>Open</item>
+        <item>Export</item>
+        <item>Clear</item>
+        <item>New Document</item>
+    </string-array>
+    <string-array name= "items2">
+        <item>Undo</item>
+        <item>Redo</item>
+        <item>Page Color</item>
+        <item>Bullets</item>
+        <item>Insert Image</item>
+        <item>About Jot</item>
+        <item>Help</item>
+    </string-array>
+    <string name = "drawer_open">Open Drawer</string>
+    <string name= "drawer_close">Close Drawer</string>
+    <string name="underline"><u>U</u></string>
+    <string name="strike"><strike>ABC</strike></string>
+
+</resources>
