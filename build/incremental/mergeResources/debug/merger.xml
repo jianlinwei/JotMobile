@@ -301,6 +301,7 @@ U
             </file>
         </source>
         <source path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/build/res/rs/debug" />
+        <source path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/build/res/generated/debug" />
     </dataSet>
     <dataSet config="debug" >
         <source path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/build-types/debug/res" />
