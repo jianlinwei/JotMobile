@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.GravityCompat;
@@ -35,6 +36,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 
 public class MainActivity extends FragmentActivity implements RichText.EditTextImeBackListener, OnTouchListener, OnClickListener, TextWatcher{
@@ -456,14 +463,25 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
 	
 	
 	public void saveFile(String fileName){
-//		File dir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), "Recent Docs");
-//		
-//		
-//			
-//		}catch(Exception e){
-//			e.printStackTrace();
-//			Toast.makeText(getApplicationContext(), e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
-//		}
+        //Toast.makeText(getApplicationContext(), Environment.getExternalStorageDirectory().toString(), Toast.LENGTH_LONG).show();
+
+
+//        File sdCard  = Environment.getExternalStorageDirectory();
+//
+//        File dir1 = new File(sdCard.getAbsolutePath());
+//        dir1.mkdirs();
+//        File file = new File(dir1, File.separator+fileName+".txt");
+        File file = new File(Environment.getExternalStorageDirectory(), "/textFile.txt");
+        try{
+            file.createNewFile();
+
+
+        }catch (IOException e){
+            e.printStackTrace();
+            Toast.makeText(getApplicationContext(),e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+        }
+
+
 	}
 
     public void createNewDoc(){

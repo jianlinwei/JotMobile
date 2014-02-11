@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.noahl98.jotmobile">
 
     
-    <uses-permission android:name="android.permisson.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     
     
@@ -17,5 +17,4 @@
             </intent-filter>
         </activity>
     </application>
-    
 </manifest>
