@@ -25,13 +25,7 @@
     </layouts>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fb6bb46-463b-4c86-b0d8-6f80833c26f2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/pre-dexed/debug/android-support-v4-849d53297d072f134c0d018d0761552f6b78a8bd.jar" afterPath="$PROJECT_DIR$/build/pre-dexed/debug/android-support-v4-849d53297d072f134c0d018d0761552f6b78a8bd.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/dex/debug/classes.dex" afterPath="$PROJECT_DIR$/build/dex/debug/classes.dex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JotMobile.iml" afterPath="$PROJECT_DIR$/JotMobile.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/noahl98/jotmobile/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/noahl98/jotmobile/MainActivity.java" />
-    </list>
+    <list default="true" id="6fb6bb46-463b-4c86-b0d8-6f80833c26f2" name="Default" comment="" />
     <ignored path="JotMobile.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
