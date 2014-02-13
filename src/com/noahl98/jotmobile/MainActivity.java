@@ -51,7 +51,7 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
 
     private int undoIndex;
 	
-	private EditText title;
+	private EditText docTitle;
 	
 	private int styleStart;
 	
@@ -154,9 +154,9 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
         //item click listener for drawer items
         drawerListView1.setOnItemClickListener(new DrawerItemClickListener());
         drawerListView2.setOnItemClickListener(new DrawerItemClickListener());
-        
-        alreadyShown=false;
+
         isMainContent= true;
+        alreadyShown=false;
         keyboardShown=false;
 
         undoIndex=0;
@@ -166,8 +166,8 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
         //assigns formatBar to its XML layout 
         formatBar = (RelativeLayout)findViewById(R.id.formatBar);
         
-        //assigns title to its XML layout
-        title = (EditText)findViewById(R.id.title);
+        //assigns docTitle to its XML layout
+        docTitle = (EditText)findViewById(R.id.docTitle);
         
         //assigns text1 to its XML layout
         text1= (TextView) findViewById(R.id.text1);
@@ -451,34 +451,30 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
 	}
 	
 	//saves the file by calling saveFile and closes the save layout
-	public void onDoneClick(View v){
+	public void onSaveDoneClick(View v){
 		FragmentManager fragmentManager = getFragmentManager();
 		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 		
-		saveFile("temp");
+		makeFile("temp");
 		
 		fragmentTransaction.remove(saveFragment).commit();
 		isMainContent= true;
 	}
 	
 	
-	public void saveFile(String fileName){
-        //Toast.makeText(getApplicationContext(), Environment.getExternalStorageDirectory().toString(), Toast.LENGTH_LONG).show();
+	public void makeFile(String fileName){
 
-
-//        File sdCard  = Environment.getExternalStorageDirectory();
-//
-//        File dir1 = new File(sdCard.getAbsolutePath());
-//        dir1.mkdirs();
-//        File file = new File(dir1, File.separator+fileName+".txt");
-        File file = new File(Environment.getExternalStorageDirectory(), "/textFile.txt");
+        File dir = new File(Environment.getExternalStorageDirectory(), File.separator+"Jot");
+        dir.mkdirs();
+        File file = new File(dir, File.separator+"textFile.txt");
         try{
+            //file.mkdirs();
             file.createNewFile();
 
 
         }catch (IOException e){
             e.printStackTrace();
-            Toast.makeText(getApplicationContext(),e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
         }
 
 
