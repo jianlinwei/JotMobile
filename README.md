@@ -12,7 +12,7 @@ Below is some other useful information about Jot for Android.
 ------------------------------------
 Jot for Android Project Information:
 ------------------------------------
--Written in Java
+-Written in Java using Android Studio
 
 -Date of estimated completion is sometime in March 2014
 
