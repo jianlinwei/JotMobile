@@ -44,6 +44,7 @@ public final class R {
         public static final int alignment=0x7f09000d;
         public static final int bold=0x7f090008;
         public static final int container=0x7f09000e;
+        public static final int docTitle=0x7f090012;
         public static final int drawer_layout=0x7f090001;
         public static final int edit_text=0x7f090004;
         public static final int formatBar=0x7f090007;
@@ -57,7 +58,6 @@ public final class R {
         public static final int separator=0x7f09000c;
         public static final int strike=0x7f09000b;
         public static final int text1=0x7f090010;
-        public static final int title=0x7f090012;
         public static final int title_box=0x7f090002;
         public static final int title_title=0x7f090011;
         public static final int underline=0x7f09000a;

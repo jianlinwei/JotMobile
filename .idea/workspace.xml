@@ -25,7 +25,13 @@
     </layouts>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fb6bb46-463b-4c86-b0d8-6f80833c26f2" name="Default" comment="" />
+    <list default="true" id="6fb6bb46-463b-4c86-b0d8-6f80833c26f2" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/pre-dexed/debug/android-support-v4-849d53297d072f134c0d018d0761552f6b78a8bd.jar" afterPath="$PROJECT_DIR$/build/pre-dexed/debug/android-support-v4-849d53297d072f134c0d018d0761552f6b78a8bd.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/dex/debug/classes.dex" afterPath="$PROJECT_DIR$/build/dex/debug/classes.dex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/noahl98/jotmobile/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/noahl98/jotmobile/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/source/r/debug/com/noahl98/jotmobile/R.java" afterPath="$PROJECT_DIR$/build/source/r/debug/com/noahl98/jotmobile/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/layout_save.xml" afterPath="$PROJECT_DIR$/res/layout/layout_save.xml" />
+    </list>
     <ignored path="JotMobile.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -91,8 +97,10 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/noahl98/jotmobile/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="473" column="74" selection-start="16416" selection-end="16416" vertical-scroll-proportion="0.34579438" vertical-offset="6183" max-vertical-offset="8865">
-              <folding />
+            <state line="466" column="85" selection-start="16079" selection-end="16079" vertical-scroll-proportion="0.48598132" vertical-offset="6618" max-vertical-offset="9435">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,7 +108,7 @@
       <file leaf-file-name="RichText.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/noahl98/jotmobile/RichText.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="5" selection-start="1251" selection-end="1251" vertical-scroll-proportion="0.0" vertical-offset="230" max-vertical-offset="885">
+            <state line="51" column="5" selection-start="1493" selection-end="1493" vertical-scroll-proportion="0.0" vertical-offset="230" max-vertical-offset="885">
               <folding />
             </state>
           </provider>
@@ -109,7 +117,7 @@
       <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="51" selection-start="261" selection-end="261" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+            <state line="7" column="79" selection-start="289" selection-end="289" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
               <folding />
             </state>
           </provider>
@@ -677,8 +685,9 @@
       <list>
         <option value="$PROJECT_DIR$/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/src/com/noahl98/jotmobile/RichText.java" />
-        <option value="$PROJECT_DIR$/src/com/noahl98/jotmobile/MainActivity.java" />
+        <option value="$PROJECT_DIR$/res/layout/layout_save.xml" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/com/noahl98/jotmobile/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -714,6 +723,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -803,7 +813,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -825,6 +834,7 @@
     <property name="FullScreen" value="false" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="TA62603ZGG" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="DroidMini" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../chem_12-19-13/StoichiometryForDummies" />
   </component>
   <component name="RunManager" selected="Android Application.JotMobile">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -1008,7 +1018,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="22" width="1276" height="778" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1034,8 +1044,8 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299373" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299373" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1059,10 +1069,59 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/noahl98/jotmobile/RichText.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="5" selection-start="1493" selection-end="1493" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1005">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="51" selection-start="261" selection-end="261" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="555">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/noahl98/jotmobile/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="156" column="0" selection-start="5364" selection-end="5364" vertical-scroll-proportion="0.0" vertical-offset="2208" max-vertical-offset="9450">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/layout_save.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="31" selection-start="712" selection-end="712" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="735">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/noahl98/jotmobile/RichText.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="5" selection-start="1493" selection-end="1493" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1005">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="51" selection-start="261" selection-end="261" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="555">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/noahl98/jotmobile/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="478" column="109" selection-start="16588" selection-end="16588" vertical-scroll-proportion="0.0" vertical-offset="7170" max-vertical-offset="8925">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1076,7 +1135,9 @@
     <entry file="file://$PROJECT_DIR$/src/com/noahl98/jotmobile/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="459" column="102" selection-start="15904" selection-end="15904" vertical-scroll-proportion="0.0" vertical-offset="6885" max-vertical-offset="8655">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1100,7 +1161,9 @@
     <entry file="file://$PROJECT_DIR$/src/com/noahl98/jotmobile/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="469" column="0" selection-start="16097" selection-end="16097" vertical-scroll-proportion="0.0" vertical-offset="7035" max-vertical-offset="8760">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1124,7 +1187,9 @@
     <entry file="file://$PROJECT_DIR$/src/com/noahl98/jotmobile/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="469" column="0" selection-start="16097" selection-end="16097" vertical-scroll-proportion="0.0" vertical-offset="7035" max-vertical-offset="8700">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1148,7 +1213,9 @@
     <entry file="file://$PROJECT_DIR$/src/com/noahl98/jotmobile/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="469" column="0" selection-start="16097" selection-end="16097" vertical-scroll-proportion="0.0" vertical-offset="7035" max-vertical-offset="8760">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1172,7 +1239,9 @@
     <entry file="file://$PROJECT_DIR$/src/com/noahl98/jotmobile/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="469" column="0" selection-start="16097" selection-end="16097" vertical-scroll-proportion="0.0" vertical-offset="7035" max-vertical-offset="8760">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1196,7 +1265,9 @@
     <entry file="file://$PROJECT_DIR$/src/com/noahl98/jotmobile/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="468" column="29" selection-start="16094" selection-end="16094" vertical-scroll-proportion="0.0" vertical-offset="7020" max-vertical-offset="8700">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1220,7 +1291,9 @@
     <entry file="file://$PROJECT_DIR$/src/com/noahl98/jotmobile/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="484" column="8" selection-start="16558" selection-end="16558" vertical-scroll-proportion="0.0" vertical-offset="7260" max-vertical-offset="8625">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1244,7 +1317,9 @@
     <entry file="file://$PROJECT_DIR$/src/com/noahl98/jotmobile/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="484" column="8" selection-start="16558" selection-end="16558" vertical-scroll-proportion="0.0" vertical-offset="7260" max-vertical-offset="8625">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1268,7 +1343,9 @@
     <entry file="file://$PROJECT_DIR$/src/com/noahl98/jotmobile/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="479" column="5" selection-start="16462" selection-end="16462" vertical-scroll-proportion="0.0" vertical-offset="7185" max-vertical-offset="8655">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1292,14 +1369,18 @@
     <entry file="file://$PROJECT_DIR$/src/com/noahl98/jotmobile/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="41" column="51" selection-start="1554" selection-end="1554" vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="8355">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/noahl98/jotmobile/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="452" column="8" selection-start="15558" selection-end="15558" vertical-scroll-proportion="0.0" vertical-offset="6780" max-vertical-offset="8340">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1325,16 +1406,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="655">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/layout_save.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="8" selection-start="1030" selection-end="1030" vertical-scroll-proportion="0.7804878" vertical-offset="0" max-vertical-offset="735">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/drawer_listview_item.xml">
@@ -1377,24 +1448,36 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/layout_save.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="43" selection-start="1234" selection-end="1234" vertical-scroll-proportion="0.7284553" vertical-offset="107" max-vertical-offset="735">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/noahl98/jotmobile/RichText.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="5" selection-start="1251" selection-end="1251" vertical-scroll-proportion="0.0" vertical-offset="243" max-vertical-offset="885">
+        <state line="51" column="5" selection-start="1493" selection-end="1493" vertical-scroll-proportion="0.0" vertical-offset="230" max-vertical-offset="885">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="51" selection-start="261" selection-end="261" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+        <state line="7" column="79" selection-start="289" selection-end="289" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/noahl98/jotmobile/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="473" column="74" selection-start="16416" selection-end="16416" vertical-scroll-proportion="0.34579438" vertical-offset="6183" max-vertical-offset="8865">
-          <folding />
+        <state line="466" column="85" selection-start="16079" selection-end="16079" vertical-scroll-proportion="0.48598132" vertical-offset="6618" max-vertical-offset="9435">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
