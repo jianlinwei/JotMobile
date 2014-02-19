@@ -2,33 +2,26 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#99ffffff">
+    android:background="#ffffff">
     
     
 
     <RelativeLayout 
     android:layout_width="match_parent"
     android:layout_height="400dp"
-    android:background="#03A536"
+    android:background="#1E772F"
     android:layout_marginTop="350dp">
-    
-	    <TextView 
-	        android:id="@+id/title_title"
-	        android:text="Title:"
+
+	    <TextView
+	        android:id="@+id/docTitle"
+            android:text="DefaultDocName"
+            android:paddingTop="20dp"
+            android:layout_centerHorizontal="true"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:textSize="20sp"
 	        android:layout_marginLeft="6dp"/>
-	    
-	    <EditText 
-	        android:id="@+id/docTitle"
-	        android:layout_below="@+id/title_title"
-	        android:layout_height="wrap_content"
-	        android:layout_width="match_parent"
-	        android:background="#424242"
-	        android:hint="Ex: Document_1"
-	        android:layout_marginLeft="3dp"
-	        android:layout_marginRight="3dp"/>
+
 	    
 	    <Button 
 	        android:id="@+id/save"
