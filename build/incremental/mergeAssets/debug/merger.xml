@@ -25,6 +25,9 @@
                 name="ic_clear.png"
                 path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/assets/ic_clear.png" />
             <file
+                name="ic_current_doc.png"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/assets/ic_current_doc.png" />
+            <file
                 name="ic_help.png"
                 path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/assets/ic_help.png" />
             <file
@@ -48,6 +51,9 @@
             <file
                 name="ic_page_color.png"
                 path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/assets/ic_page_color.png" />
+            <file
+                name="ic_recent_doc.png"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/assets/ic_recent_doc.png" />
             <file
                 name="ic_redo.png"
                 path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/assets/ic_redo.png" />

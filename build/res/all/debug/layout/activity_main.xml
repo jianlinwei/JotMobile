@@ -19,7 +19,7 @@
 	    	    android:layout_height ="wrap_content"
 	    	    android:layout_width ="match_parent"
 	        	android:id="@+id/edit_text"
-	        	android:minLines="22"
+	        	android:minLines="23"
 	        	android:gravity="top"/>
 	    </ScrollView>
 	    <ListView 
