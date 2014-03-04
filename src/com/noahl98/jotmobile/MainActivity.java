@@ -14,7 +14,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.text.Editable;
 import android.text.Selection;
 import android.text.Spannable;
-import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.TextWatcher;
 import android.text.style.StrikethroughSpan;
@@ -36,12 +35,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 
 public class MainActivity extends FragmentActivity implements RichText.EditTextImeBackListener, OnTouchListener, OnClickListener, TextWatcher{
@@ -51,14 +45,12 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
 
     private int undoIndex;
 	
-	private EditText docTitle;
+	public TextView docTitle;
 	
 	private int styleStart;
 	
 	private ListView drawerListView1;
 	private ListView drawerListView2;
-	
-	private TextView text1;
 	
 	private RelativeLayout formatBar;
 	
@@ -75,53 +67,27 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
 	private boolean keyboardShown;
 	private boolean alreadyShown;
 	private boolean isMainContent;
-	
-	
-    //private static enum LocationStatus {NONE, FOUND, NOT_FOUND, SEARCHING}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
-        //sets up the first drawer
-        Model.loadModel1();
-        
+
         //finds the left drawer
         drawerListView1 = (ListView) findViewById(R.id.left_drawer);
-        //sets the correct items(defined in Model.java)
-        drawerListViewItems1 = new String[Model.Items1.size()];
-        
-        //sets Id's to strings
-        for(int i= 0; i<drawerListViewItems1.length;i++){
-        	drawerListViewItems1[i]= Integer.toString(i+1);
-        }
-        
-        //applies the custom array adapter
-        ItemAdapter adapter1 = new ItemAdapter(this, R.layout.drawer_listview_item, drawerListViewItems1, 1);
-        drawerListView1.setAdapter(adapter1);
-        
-        //sets up the second drawer
-        Model.loadModel2();
-        
         //finds right drawer
         drawerListView2 = (ListView)findViewById(R.id.right_drawer);
-        //sets the correct items(defined in Model.java)
-        drawerListViewItems2 = new String[Model.Items2.size()];
-        
-        //changes ids to strings
-        for(int i =0; i<drawerListViewItems2.length;i++){
-        	drawerListViewItems2[i] = Integer.toString(i+1);
-        }
-        
-        //sets custom adapter
-        ItemAdapter adapter2 = new ItemAdapter(this, R.layout.drawer_listview_item, drawerListViewItems2, 2);
-        drawerListView2.setAdapter(adapter2);
+
+        //loads the first drawer
+        loadDrawer1();
+
+        //loads the second drawer
+        loadDrawer2();
  
-        // 2. App Icon 
+        //App Icon
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
  
-        // 2.1 create ActionBarDrawerToggle
+        //create ActionBarDrawerToggle
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.drawable.ic_drawer, 
         		R.string.drawer_open, R.string.drawer_close);
         
@@ -142,10 +108,7 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
         	}
 		});
  
-        // 2.2 Set actionBarDrawerToggle as the DrawerListener
-        //drawerLayout.setDrawerListener(actionBarDrawerToggle);
- 
-        // 2.3 enable and show "up" arrow
+        //enable and show "up" arrow
         getActionBar().setDisplayHomeAsUpEnabled(true); 
  
         // just styling option
@@ -167,10 +130,7 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
         formatBar = (RelativeLayout)findViewById(R.id.formatBar);
         
         //assigns docTitle to its XML layout
-        docTitle = (EditText)findViewById(R.id.docTitle);
-        
-        //assigns text1 to its XML layout
-        text1= (TextView) findViewById(R.id.text1);
+        docTitle = (TextView)findViewById(R.id.docTitle);
         
         //defines save fragment
         saveFragment = new SaveFragment();
@@ -197,9 +157,44 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
         
         //initiates sofKeyboardHook
         softKeyboardHook();
+
+        //creates the default saving directory
+        Doc.makeDefaultDir();
+        lookForFiles();
     }
     
-	
+	public void loadDrawer1(){
+        //sets up the first drawer
+        Model.loadModel1();
+        //sets the correct items(defined in Model.java)
+        drawerListViewItems1 = new String[Model.Items1.size()];
+
+        //sets Id's to strings
+        for(int i= 0; i<drawerListViewItems1.length;i++){
+            drawerListViewItems1[i]= Integer.toString(i+1);
+        }
+        //applies the custom array adapter
+        ItemAdapter adapter1 = new ItemAdapter(this, R.layout.drawer_listview_item, drawerListViewItems1, 1);
+        drawerListView1.setAdapter(adapter1);
+    }
+
+    public void loadDrawer2(){
+        //sets up the second drawer
+        Model.loadModel2();
+
+        //sets the correct items(defined in Model.java)
+        drawerListViewItems2 = new String[Model.Items2.size()];
+
+        //changes ids to strings
+        for(int i =0; i<drawerListViewItems2.length;i++){
+            drawerListViewItems2[i] = Integer.toString(i+1);
+        }
+
+        //sets custom adapter
+        ItemAdapter adapter2 = new ItemAdapter(this, R.layout.drawer_listview_item, drawerListViewItems2, 2);
+        drawerListView2.setAdapter(adapter2);
+
+    }
     @Override
     protected void onPostCreate(Bundle savedInstanceState){
     	super.onPostCreate(savedInstanceState);
@@ -239,7 +234,6 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
 			
 			@Override
 			public void onGlobalLayout() {
-				// TODO Auto-generated method stub
 				Rect r = new Rect();
 				scrollView.getWindowVisibleDisplayFrame(r);
                 //gets the height difference
@@ -293,7 +287,7 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
     	}
 		return false;
 	}
-    
+
     //applies spans to body
     public void formatBtnClicked(ToggleButton toggleButton, String tag){
 
@@ -449,40 +443,40 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
 		isMainContent=false;		
 		fragmentTransaction.replace(R.id.frame, saveFragment).commit();
 	}
+
+
+    //searches for files in the specified directory and adds them to the drawerLayout
+    public void lookForFiles(){
+        File[] files = Doc.docsFolder.listFiles();
+        try {
+            Model.Items1.get(5).setName(files[0].getName());
+            Model.Items1.get(6).setName(files[1].getName());
+            Model.Items1.get(7).setName(files[2].getName());
+            Model.Items1.get(8).setName(files[3].getName());
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        loadDrawer1();
+    }
 	
-	//saves the file by calling saveFile and closes the save layout
+	//saves the file and closes the save layout
 	public void onSaveDoneClick(View v){
 		FragmentManager fragmentManager = getFragmentManager();
 		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-		
-		makeFile("temp");
-		
+
+        //defines a new Doc
+        Doc file = new Doc("Document 1");
+
+        //save the current text to the file
+        file.saveFile(richText.getText().toString());
+
+        //updates the list on the drawer layout
+        lookForFiles();
+
+        //changes back to the main view
 		fragmentTransaction.remove(saveFragment).commit();
 		isMainContent= true;
 	}
-	
-	
-	public void makeFile(String fileName){
-
-        File dir = new File(Environment.getExternalStorageDirectory(), File.separator+"Jot");
-        dir.mkdirs();
-        File file = new File(dir, File.separator+"textFile.txt");
-        try{
-            //file.mkdirs();
-            file.createNewFile();
-
-
-        }catch (IOException e){
-            e.printStackTrace();
-            Toast.makeText(getApplicationContext(),e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
-        }
-
-
-	}
-
-    public void createNewDoc(){
-
-    }
 
 
     public void undo(){
@@ -598,8 +592,6 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
                 Toast.makeText(getApplicationContext(),"Clear", Toast.LENGTH_SHORT).show();
                 drawerLayout.closeDrawers();
             }else if(((TextView) nextChild).getText().equals("New Document")){
-                //Toast.makeText(getApplicationContext(),"New Document", Toast.LENGTH_SHORT).show();
-                createNewDoc();
                 drawerLayout.closeDrawers();
             }else if(((TextView) nextChild).getText().equals("Undo")){
                 undo();
