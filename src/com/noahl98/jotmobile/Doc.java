@@ -21,8 +21,6 @@ public class Doc extends File{
     private String fileName;
     public static File[] files = defaultDir.listFiles();
 
-    public String testInt = " ";
-
     public Doc(String name){
         super(name);
         this.fileName = name;
@@ -61,9 +59,5 @@ public class Doc extends File{
             return null;
         }
         return files[index];
-    }
-
-    public String getTestInt(){
-        return testInt;
     }
 }
