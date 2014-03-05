@@ -16,7 +16,7 @@ public class Doc extends File{
 
     public static final File defaultDir = new File(Environment.getExternalStorageDirectory().getPath(), File.separator+ "Jot");
     public static final File docsFolder = new File(defaultDir, File.separator+ "Documents");
-    public static final File xmlFolder = new File(defaultDir, File.separator+"XML");
+    public static final File xmlFolder = new File(defaultDir, File.separator+"Data");
 
     private String fileName;
     public static File[] files = defaultDir.listFiles();
