@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.GravityCompat;
@@ -28,7 +27,6 @@ import android.view.ViewTreeObserver;
 import android.view.animation.AlphaAnimation;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -414,7 +412,6 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
     	}catch(Exception e){
     		e.printStackTrace();
     	}
-    	
     }
     
     //overrides OnClick to register formatButton clicks
@@ -468,7 +465,9 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
         Doc file = new Doc("Document 1");
 
         //save the current text to the file
-        file.saveFile(richText.getText().toString());
+        file.saveFile(richText.getText());
+
+        Toast.makeText(getApplicationContext(), file.testString, Toast.LENGTH_LONG).show();
 
         //updates the list on the drawer layout
         lookForFiles();

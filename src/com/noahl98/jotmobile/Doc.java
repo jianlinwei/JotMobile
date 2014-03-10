@@ -1,12 +1,14 @@
 package com.noahl98.jotmobile;
 
 import android.os.Environment;
-import android.widget.Filter;
+import android.text.Editable;
+import android.text.SpannableStringBuilder;
+import android.text.style.StrikethroughSpan;
+import android.text.style.StyleSpan;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 
 /**
@@ -21,11 +23,15 @@ public class Doc extends File{
     private String fileName;
     public static File[] files = defaultDir.listFiles();
 
+    public static int stylespanInt;
+    public static int strikethoughspanInt;
+    public static int underlinespanInt;
+
     public Doc(String name){
         super(name);
         this.fileName = name;
 
-       saveFile(" ");
+       saveFile(new SpannableStringBuilder(" "));
     }
 
     public static void makeDefaultDir(){
@@ -40,16 +46,36 @@ public class Doc extends File{
         }
     }
 
-    public void saveFile(String text){
-        File file = new File(docsFolder.getAbsolutePath(), File.separator+fileName+".txt");
+    public void saveFile(Editable text){
+        File textFile = new File(docsFolder.getAbsolutePath(), File.separator+fileName+".txt");
+        File xmlFile = new File(xmlFolder.getAbsolutePath(), File.separator+fileName+ ".txt");
+        StyleSpan[] styleSpans =text.getSpans(0, text.length(), StyleSpan.class);
+        StrikethroughSpan[] strikethroughSpans = text.getSpans(0, text.length(), StrikethroughSpan.class);
+        UnderlineSpan[] underlineSpans = text.getSpans(0,text.length(), UnderlineSpan.class);
         try{
-            file.createNewFile();
-            FileOutputStream fOut = new FileOutputStream(file);
+            textFile.createNewFile();
+            FileOutputStream fOut = new FileOutputStream(textFile);
             OutputStreamWriter outStream = new OutputStreamWriter(fOut);
-            outStream.write(text);
+            outStream.write(text.toString());
             outStream.close();
             fOut.close();
         }catch(IOException e){
+            e.printStackTrace();
+        }
+        try{
+            xmlFile.createNewFile();
+            FileOutputStream fOut = new FileOutputStream(xmlFile);
+            fOut.write(convertToXML(styleSpans, "styleSpan", "item").getBytes());
+            stylespanInt = styleSpans.length;
+            fOut.flush();
+            fOut.write(convertToXML(strikethroughSpans, "strikethroughSpan", "item").getBytes());
+            strikethoughspanInt=strikethroughSpans.length;
+            fOut.flush();
+            fOut.write(convertToXML(underlineSpans, "underlineSpan", "item").getBytes());
+            underlinespanInt= underlineSpans.length;
+            fOut.flush();
+            fOut.close();
+        }catch (IOException e){
             e.printStackTrace();
         }
     }
@@ -59,5 +85,29 @@ public class Doc extends File{
             return null;
         }
         return files[index];
+    }
+
+    private String convertToXML(Object[] args, String rootName, String elemName){
+        String xmlString = "<"+rootName+">\n";
+
+        for(int i=0; i<args.length; i++){
+            xmlString += "  <"+ elemName+">" + args[i].toString() + "<"+ elemName+">\n";
+        }
+
+        xmlString += "<"+rootName+">";
+
+        return xmlString;
+    }
+
+
+    //for debugging
+    public static int[] evaluateSpans(){
+        int[] spans = new int[3];
+
+        spans[0]=stylespanInt;
+        spans[1]=strikethoughspanInt;
+        spans[2]=underlinespanInt;
+
+        return spans;
     }
 }
