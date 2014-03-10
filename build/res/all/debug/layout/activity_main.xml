@@ -5,7 +5,6 @@
      android:id="@+id/frame">
      
 	 <android.support.v4.widget.DrawerLayout 
-	 	xmlns:tools="http://schemas.android.com/tools"
 	    android:layout_width="fill_parent"
 	    android:layout_height="fill_parent"
 	    android:id="@+id/drawer_layout">
@@ -107,7 +106,7 @@
                     android:layout_marginRight="12dp"
                     android:layout_toRightOf="@+id/strike"/>
                 <ImageButton 
-                    android:id="@+id/alignment"
+                    android:id="@+id/options"
                     android:layout_height="fill_parent"
                     android:layout_width="wrap_content"
                     android:layout_marginLeft="6dp"
