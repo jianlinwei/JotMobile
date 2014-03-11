@@ -466,8 +466,13 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
 
         //save the current text to the file
         file.saveFile(richText.getText());
+        int[] asdf = Doc.evaluateSpans();
 
-        Toast.makeText(getApplicationContext(), file.testString, Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), Integer.toString(asdf[2]), Toast.LENGTH_SHORT).show();
+
+//        for (int i=0; i<3; i++){
+//            Toast.makeText(getApplicationContext(), Integer.toString(asdf[i]), Toast.LENGTH_LONG).show();
+//        }
 
         //updates the list on the drawer layout
         lookForFiles();
@@ -490,6 +495,10 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
         richText.append(undoStrings.get(undoIndex-1));
     }
 
+    public void clearText(){
+        richText.setText("");
+    }
+
 	@Override
 	public void afterTextChanged(Editable s) {
 		// TODO Auto-generated method stub
@@ -509,7 +518,6 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
 				exists = false;
 				for(int i=0; i<ss.length;i++){
 					if(ss[i].getStyle()==android.graphics.Typeface.BOLD){
-						//s.removeSpan(ss[i]);
 						exists= true;
 					}
 				}
@@ -522,7 +530,6 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
 				exists =false;
 				for(int i=0; i<ss.length;i++){
 					if(ss[i].getStyle()==android.graphics.Typeface.ITALIC){
-						//s.removeSpan(ss[i]);
 						exists= true;
 					}
 				}
@@ -534,7 +541,6 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
 				UnderlineSpan[] us = s.getSpans(styleStart, position, UnderlineSpan.class);
 				exists = false;
 				for(int i=0; i<us.length;i++){
-					//s.removeSpan(us[i]);
 					exists= true;
 				}
 				if(!exists){
@@ -545,7 +551,6 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
 				StrikethroughSpan[] ss = s.getSpans(styleStart, position, StrikethroughSpan.class);
 				exists=false;
 				for(int i=0; i<ss.length;i++){
-					//s.removeSpan(ss[i]);
 					exists = true;
 				}
 				if(!exists){
@@ -588,7 +593,7 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
                 Toast.makeText(getApplicationContext(),"Export", Toast.LENGTH_SHORT).show();
                 drawerLayout.closeDrawers();
             }else if(((TextView) nextChild).getText().equals("Clear")){
-                Toast.makeText(getApplicationContext(),"Clear", Toast.LENGTH_SHORT).show();
+                clearText();
                 drawerLayout.closeDrawers();
             }else if(((TextView) nextChild).getText().equals("New Document")){
                 drawerLayout.closeDrawers();

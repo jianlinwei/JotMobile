@@ -93,7 +93,6 @@ public class Doc extends File{
         for(int i=0; i<args.length; i++){
             xmlString += "  <"+ elemName+">" + args[i].toString() + "<"+ elemName+">\n";
         }
-
         xmlString += "<"+rootName+">";
 
         return xmlString;
