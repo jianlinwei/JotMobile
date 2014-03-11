@@ -3,3 +3,10 @@
 local.properties
 /bin
 /gen
+*.apk
+*.ap_
+*.dex
+*.class
+*.iws
+*.iml
+/build/pre-dexed/debug/android-support-v4-849d53297d072f134c0d018d0761552f6b78a8bd.jar
