@@ -23,9 +23,9 @@ public class Doc extends File{
     private String fileName;
     public static File[] files = defaultDir.listFiles();
 
-    public static int stylespanInt;
-    public static int strikethoughspanInt;
-    public static int underlinespanInt;
+    public static int styleSpanInt;
+    public static int strikethoughSpanInt;
+    public static int underlineSpanInt;
 
     public Doc(String name){
         super(name);
@@ -33,7 +33,7 @@ public class Doc extends File{
 
        saveFile(new SpannableStringBuilder(" "));
     }
-
+    //function to make sure all directories are created
     public static void makeDefaultDir(){
         if(!defaultDir.exists()){
             defaultDir.mkdirs();
@@ -45,13 +45,16 @@ public class Doc extends File{
             xmlFolder.mkdirs();
         }
     }
-
+    //function for creating the necessary files while saving
     public void saveFile(Editable text){
         File textFile = new File(docsFolder.getAbsolutePath(), File.separator+fileName+".txt");
         File xmlFile = new File(xmlFolder.getAbsolutePath(), File.separator+fileName+ ".txt");
+
         StyleSpan[] styleSpans =text.getSpans(0, text.length(), StyleSpan.class);
         StrikethroughSpan[] strikethroughSpans = text.getSpans(0, text.length(), StrikethroughSpan.class);
         UnderlineSpan[] underlineSpans = text.getSpans(0,text.length(), UnderlineSpan.class);
+
+        //writes current text to the specified file
         try{
             textFile.createNewFile();
             FileOutputStream fOut = new FileOutputStream(textFile);
@@ -62,17 +65,19 @@ public class Doc extends File{
         }catch(IOException e){
             e.printStackTrace();
         }
+
+        //creates the XML file for saving the spans
         try{
             xmlFile.createNewFile();
             FileOutputStream fOut = new FileOutputStream(xmlFile);
             fOut.write(convertToXML(styleSpans, "styleSpan", "item").getBytes());
-            stylespanInt = styleSpans.length;
+            styleSpanInt = styleSpans.length;
             fOut.flush();
             fOut.write(convertToXML(strikethroughSpans, "strikethroughSpan", "item").getBytes());
-            strikethoughspanInt=strikethroughSpans.length;
+            strikethoughSpanInt=strikethroughSpans.length;
             fOut.flush();
             fOut.write(convertToXML(underlineSpans, "underlineSpan", "item").getBytes());
-            underlinespanInt= underlineSpans.length;
+            underlineSpanInt= underlineSpans.length;
             fOut.flush();
             fOut.close();
         }catch (IOException e){
@@ -80,6 +85,7 @@ public class Doc extends File{
         }
     }
 
+    //function for getting a specific file
     public static File getFiles(int index){
         if(index>files.length){
             return null;
@@ -87,6 +93,7 @@ public class Doc extends File{
         return files[index];
     }
 
+    //for use while creating the XML file
     private String convertToXML(Object[] args, String rootName, String elemName){
         String xmlString = "<"+rootName+">\n";
 
@@ -99,13 +106,13 @@ public class Doc extends File{
     }
 
 
-    //for debugging
+    //TEMPORARY for debugging
     public static int[] evaluateSpans(){
         int[] spans = new int[3];
 
-        spans[0]=stylespanInt;
-        spans[1]=strikethoughspanInt;
-        spans[2]=underlinespanInt;
+        spans[0]=styleSpanInt;
+        spans[1]=strikethoughSpanInt;
+        spans[2]=underlineSpanInt;
 
         return spans;
     }

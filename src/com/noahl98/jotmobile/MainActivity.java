@@ -82,10 +82,10 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
         //loads the second drawer
         loadDrawer2();
  
-        //App Icon
+        //finds the drawer layout
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
  
-        //create ActionBarDrawerToggle
+        //assign ActionBarDrawerToggle
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.drawable.ic_drawer, 
         		R.string.drawer_open, R.string.drawer_close);
         
@@ -93,15 +93,15 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
         drawerLayout.setDrawerListener(new DrawerLayout.SimpleDrawerListener() {
         	@Override
         	public void onDrawerOpened(View drawerLayout){
+                //hides format bar when a drawer is opened
         		if(keyboardShown){
-        			//hides format bar when a drawer is opened
         			hideFormatBarAnim();
         		}
         	}
         	
         	@Override
         	public void onDrawerClosed(View drawerLayout){
-        		//shows format bar when closed
+                //shows format bar when closed
         		showFormatBar();
         	}
 		});
@@ -109,7 +109,7 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
         //enable and show "up" arrow
         getActionBar().setDisplayHomeAsUpEnabled(true); 
  
-        // just styling option
+        // just styling option for the drawer layout
         drawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
         
         //item click listener for drawer items
@@ -160,7 +160,11 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
         Doc.makeDefaultDir();
         lookForFiles();
     }
-    
+
+
+    ////////////////////////////////////////
+    //////Funtions for the DawerLayout//////
+    ////////////////////////////////////////
 	public void loadDrawer1(){
         //sets up the first drawer
         Model.loadModel1();
@@ -224,7 +228,11 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
 			hideFormatBar();
 		}
 	}
-    
+
+    ///////////////////////////////////////
+    //////Functions for the formatBar//////
+    ///////////////////////////////////////
+
     //logic for when to show the formatBar
     private void softKeyboardHook(){
     	final View scrollView= findViewById(R.id.scrollView);
@@ -429,6 +437,72 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
 			formatBtnClicked(strikeButton, "strike");
 		}
 	}
+
+    @Override
+    public void afterTextChanged(Editable s) {
+        // TODO Auto-generated method stub
+        int position = Selection.getSelectionStart(s);
+        if(position<0){
+            position = 0;
+        }
+
+        if(position>0){
+            if(styleStart>position){
+                styleStart = position-1;
+            }
+
+            boolean exists = false;
+            if(boldButton.isChecked()){
+                StyleSpan[] ss = s.getSpans(styleStart, position, StyleSpan.class);
+                exists = false;
+                for(int i=0; i<ss.length;i++){
+                    if(ss[i].getStyle()==android.graphics.Typeface.BOLD){
+                        exists= true;
+                    }
+                }
+                if(!exists){
+                    s.setSpan(new StyleSpan(android.graphics.Typeface.BOLD), styleStart, position, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+                }
+            }
+            if(emButton.isChecked()){
+                StyleSpan[] ss = s.getSpans(styleStart, position, StyleSpan.class);
+                exists =false;
+                for(int i=0; i<ss.length;i++){
+                    if(ss[i].getStyle()==android.graphics.Typeface.ITALIC){
+                        exists= true;
+                    }
+                }
+                if(!exists){
+                    s.setSpan(new StyleSpan(android.graphics.Typeface.ITALIC), styleStart, position, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+                }
+            }
+            if(uButton.isChecked()){
+                UnderlineSpan[] us = s.getSpans(styleStart, position, UnderlineSpan.class);
+                exists = false;
+                for(int i=0; i<us.length;i++){
+                    exists= true;
+                }
+                if(!exists){
+                    s.setSpan(new UnderlineSpan(), styleStart, position, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+                }
+            }
+            if(strikeButton.isChecked()){
+                StrikethroughSpan[] ss = s.getSpans(styleStart, position, StrikethroughSpan.class);
+                exists=false;
+                for(int i=0; i<ss.length;i++){
+                    exists = true;
+                }
+                if(!exists){
+                    s.setSpan(new StrikethroughSpan(), styleStart, position, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+                }
+            }
+        }
+    }
+
+    ////////////////////////////////
+    //////Functions for saving//////
+    ////////////////////////////////
+
 	//called when the save button is clicked. Opens the save layout
 	public void onSaveBtnClick(){
 		FragmentManager fragmentManager = getFragmentManager();
@@ -470,10 +544,6 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
 
         Toast.makeText(getApplicationContext(), Integer.toString(asdf[2]), Toast.LENGTH_SHORT).show();
 
-//        for (int i=0; i<3; i++){
-//            Toast.makeText(getApplicationContext(), Integer.toString(asdf[i]), Toast.LENGTH_LONG).show();
-//        }
-
         //updates the list on the drawer layout
         lookForFiles();
 
@@ -482,6 +552,9 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
 		isMainContent= true;
 	}
 
+    ///////////////////////////////////
+    //////Various other functions//////
+    ///////////////////////////////////
 
     public void undo(){
         Editable s = new SpannableStringBuilder(richText.getEditableText().subSequence(richText.length()-5,richText.length()));
@@ -499,66 +572,7 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
         richText.setText("");
     }
 
-	@Override
-	public void afterTextChanged(Editable s) {
-		// TODO Auto-generated method stub
-		int position = Selection.getSelectionStart(s);
-		if(position<0){
-			position = 0;
-		}
-		
-		if(position>0){
-			if(styleStart>position){
-				styleStart = position-1;
-			}
-			
-			boolean exists = false;
-			if(boldButton.isChecked()){
-				StyleSpan[] ss = s.getSpans(styleStart, position, StyleSpan.class);
-				exists = false;
-				for(int i=0; i<ss.length;i++){
-					if(ss[i].getStyle()==android.graphics.Typeface.BOLD){
-						exists= true;
-					}
-				}
-				if(!exists){
-					s.setSpan(new StyleSpan(android.graphics.Typeface.BOLD), styleStart, position, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-				}
-			}
-			if(emButton.isChecked()){
-				StyleSpan[] ss = s.getSpans(styleStart, position, StyleSpan.class);
-				exists =false;
-				for(int i=0; i<ss.length;i++){
-					if(ss[i].getStyle()==android.graphics.Typeface.ITALIC){
-						exists= true;
-					}
-				}
-				if(!exists){
-					s.setSpan(new StyleSpan(android.graphics.Typeface.ITALIC), styleStart, position, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-				}
-			}
-			if(uButton.isChecked()){
-				UnderlineSpan[] us = s.getSpans(styleStart, position, UnderlineSpan.class);
-				exists = false;
-				for(int i=0; i<us.length;i++){
-					exists= true;
-				}
-				if(!exists){
-					s.setSpan(new UnderlineSpan(), styleStart, position, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-				}
-			}
-			if(strikeButton.isChecked()){
-				StrikethroughSpan[] ss = s.getSpans(styleStart, position, StrikethroughSpan.class);
-				exists=false;
-				for(int i=0; i<ss.length;i++){
-					exists = true;
-				}
-				if(!exists){
-					s.setSpan(new StrikethroughSpan(), styleStart, position, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-				}
-			}
-		}
-	}
+
 
 	@Override
 	public void beforeTextChanged(CharSequence s, int start, int count,
