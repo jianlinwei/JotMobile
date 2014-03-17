@@ -14,6 +14,4 @@ Jot for Android Project Information:
 ------------------------------------
 -Written in Java using Android Studio
 
--Date of estimated completion is sometime in April 2014
-
 -Target platform: [?????]
