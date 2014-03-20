@@ -40,8 +40,9 @@ public final class R {
         public static final int separator=0x7f02000f;
     }
     public static final class id {
-        public static final int action_settings=0x7f090013;
+        public static final int action_settings=0x7f090014;
         public static final int bold=0x7f090008;
+        public static final int cancel=0x7f090013;
         public static final int container=0x7f09000e;
         public static final int docTitle=0x7f090011;
         public static final int drawer_layout=0x7f090001;
