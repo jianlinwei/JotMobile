@@ -27,6 +27,7 @@ import android.view.ViewTreeObserver;
 import android.view.animation.AlphaAnimation;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -43,7 +44,7 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
 
     private int undoIndex;
 	
-	public TextView docTitle;
+	//public EditText docTitle;
 	
 	private int styleStart;
 	
@@ -126,9 +127,6 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
         
         //assigns formatBar to its XML layout 
         formatBar = (RelativeLayout)findViewById(R.id.formatBar);
-        
-        //assigns docTitle to its XML layout
-        docTitle = (TextView)findViewById(R.id.docTitle);
         
         //defines save fragment
         saveFragment = new SaveFragment();
@@ -237,7 +235,6 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
     private void softKeyboardHook(){
     	final View scrollView= findViewById(R.id.scrollView);
     	scrollView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-			
 			@Override
 			public void onGlobalLayout() {
 				Rect r = new Rect();
@@ -254,7 +251,6 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
 						keyboardShown=true;
 						showFormatBar();
 					}
-					
 				}else{
 					keyboardShown=false;
 					alreadyShown=false;
@@ -512,9 +508,8 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
 		imm.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
 
 		isMainContent=false;		
-		fragmentTransaction.replace(R.id.frame, saveFragment).commit();
+		fragmentTransaction.add(R.id.frame, saveFragment).addToBackStack(null).commit();
 	}
-
 
     //searches for files in the specified directory and adds them to the drawerLayout
     public void lookForFiles(){
@@ -536,13 +531,10 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
 		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
         //defines a new Doc
-        Doc file = new Doc("Document 1");
+        Doc file = new Doc(SaveFragment.getDocTitle());
 
         //save the current text to the file
         file.saveFile(richText.getText());
-        int[] asdf = Doc.evaluateSpans();
-
-        Toast.makeText(getApplicationContext(), Integer.toString(asdf[2]), Toast.LENGTH_SHORT).show();
 
         //updates the list on the drawer layout
         lookForFiles();
@@ -552,10 +544,17 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
 		isMainContent= true;
 	}
 
+    public void cancelSave(View view){
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.remove(saveFragment).commit();
+        isMainContent=true;
+    }
+
     ///////////////////////////////////
     //////Various other functions//////
     ///////////////////////////////////
-
     public void undo(){
         Editable s = new SpannableStringBuilder(richText.getEditableText().subSequence(richText.length()-5,richText.length()));
         richText.getEditableText().delete(richText.length()-5,richText.length());
@@ -572,8 +571,18 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
         richText.setText("");
     }
 
+    @Override
+    public void onBackPressed(){
+        /*if(saveFragment.onBackPressed(saveFragment)){
+            isMainContent=true;
+        }*/
+        saveFragment.onBackPressed(saveFragment);
+        isMainContent=true;
+    }
 
-
+    ////////////////////
+    //////NOT USED//////
+    ////////////////////
 	@Override
 	public void beforeTextChanged(CharSequence s, int start, int count,
 			int after) {
@@ -586,6 +595,9 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
 		// TODO Auto-generated method stub
 		
 	}
+
+    ////////////////////
+    ////////////////////
 
 	
 	//custom drawerItemClickListener for the DrawerLayout
