@@ -28,7 +28,6 @@ public class SaveFragment extends Fragment{
         FragmentTransaction fragmentTransaction= fragmentManager.beginTransaction();
 
         fragmentTransaction.remove(saveFragment).commit();
-        //return true;
     }
 
     public static String getDocTitle(){
