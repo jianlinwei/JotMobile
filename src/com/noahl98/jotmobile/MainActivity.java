@@ -57,6 +57,7 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
 	private ActionBarDrawerToggle actionBarDrawerToggle;
 	private RichText richText;
 	private SaveFragment saveFragment;
+    private CreateNewDoc createNewDocFragement;
 	
 	private ToggleButton boldButton;
 	private ToggleButton emButton;
@@ -130,6 +131,9 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
         
         //defines save fragment
         saveFragment = new SaveFragment();
+
+        //defines createNewDocFragment
+        createNewDocFragement= new CreateNewDoc();
         
         //assigns richText to its XML layout and adds a TextChangeListener
         richText= (RichText)findViewById(R.id.edit_text);
@@ -552,6 +556,44 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
         isMainContent=true;
     }
 
+    ////////////////////////////////////////////////
+    //////Functions for creating new documents//////
+    ////////////////////////////////////////////////
+
+    public void createNewDoc(){
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        InputMethodManager imm = (InputMethodManager) this.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+
+        isMainContent=false;
+        fragmentTransaction.add(R.id.frame, createNewDocFragement).addToBackStack(null).commit();
+    }
+
+    public void onCreateClicked(View v){
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        //defines a new Doc
+        Doc file = new Doc(CreateNewDoc.getDocTitle());
+
+        //updates the list on the drawer layout
+        lookForFiles();
+
+        //changes back to the main view
+        fragmentTransaction.remove(createNewDocFragement).commit();
+        isMainContent= true;
+    }
+
+    public void cancelCreate(View v){
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.remove(createNewDocFragement).commit();
+        isMainContent=true;
+    }
+
     ///////////////////////////////////
     //////Various other functions//////
     ///////////////////////////////////
@@ -573,12 +615,11 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
 
     @Override
     public void onBackPressed(){
-        /*if(saveFragment.onBackPressed(saveFragment)){
-            isMainContent=true;
-        }*/
         saveFragment.onBackPressed(saveFragment);
         isMainContent=true;
     }
+
+
 
     ////////////////////
     //////NOT USED//////
@@ -622,6 +663,7 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
                 clearText();
                 drawerLayout.closeDrawers();
             }else if(((TextView) nextChild).getText().equals("New Document")){
+                createNewDoc();
                 drawerLayout.closeDrawers();
             }else if(((TextView) nextChild).getText().equals("Undo")){
                 undo();

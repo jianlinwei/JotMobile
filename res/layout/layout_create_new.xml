@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:layout_width="325dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="15dp"
+        android:background="#1E772F"
+        android:layout_marginTop="200dp">
+
+        <EditText
+            android:id="@+id/newDocTitle"
+            android:hint="Ex. Document 1"
+            android:layout_marginTop="20dp"
+            android:background="#4F8459"
+            android:padding="5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"/>
+
+        <Button
+            android:id="@+id/create"
+            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:text="Create"
+            android:layout_below="@+id/newDocTitle"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:onClick="onCreateClicked"/>
+        <Button
+            android:id="@+id/cancelCreate"
+            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:text="Cancel"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/newDocTitle"
+            android:layout_toRightOf="@+id/create"
+            android:onClick="cancelCreate"/>
+
+
+    </RelativeLayout>
+</ScrollView>

@@ -215,18 +215,18 @@ Help
                     </item>
                 </string-array>
 
-                <string name="drawer_open" >Open Drawer
-                </string>
                 <string name="hello_world" >Hello world!
                 </string>
-                <string name="strike" ><strike>
-ABC
-                    </strike></string>
+                <string name="drawer_open" >Open Drawer
+                </string>
+                <string name="drawer_close" >Close Drawer
+                </string>
                 <string name="underline" ><u>
 U
                     </u></string>
-                <string name="drawer_close" >Close Drawer
-                </string>
+                <string name="strike" ><strike>
+ABC
+                    </strike></string>
             </file>
             <file
                 path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/values/styles.xml"
@@ -299,6 +299,11 @@ U
                     <!-- API 14 theme customizations can go here. -->
                 </style>
             </file>
+            <file
+                name="layout_create_new"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/layout/layout_create_new.xml"
+                qualifiers=""
+                type="layout" />
         </source>
         <source path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/build/res/rs/debug" />
         <source path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/build/res/generated/debug" />
