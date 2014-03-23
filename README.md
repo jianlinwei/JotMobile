@@ -14,4 +14,4 @@ Jot for Android Project Information:
 ------------------------------------
 -Written in Java using Android Studio
 
--Target platform: [?????]
+-Target platform: Android KitKat (4.4) or greater
