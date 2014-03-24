@@ -21,7 +21,7 @@ public class Doc extends File{
     public static final File xmlFolder = new File(defaultDir, File.separator+"Data");
 
     private String fileName;
-    public static File[] files = defaultDir.listFiles();
+    public static File[] files = docsFolder.listFiles();
 
     public static int styleSpanInt;
     public static int strikethoughSpanInt;
@@ -86,9 +86,12 @@ public class Doc extends File{
     }
 
     //function for getting a specific file
-    public static File getFiles(int index){
-        if(index>files.length){
-            return null;
+    public static File getFiles(String fileName){
+        int index=-1;
+        for (int i=0; i<files.length;i++){
+            if(files[i].getName().equals(fileName)){
+                index = i;
+            }
         }
         return files[index];
     }
