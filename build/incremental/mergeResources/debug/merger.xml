@@ -304,6 +304,21 @@ ABC
                 path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/layout/layout_create_new.xml"
                 qualifiers=""
                 type="layout" />
+            <file
+                name="popup_menu"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/menu/popup_menu.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="about_page"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/layout/about_page.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="help_page"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/layout/help_page.xml"
+                qualifiers=""
+                type="layout" />
         </source>
         <source path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/build/res/rs/debug" />
         <source path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/build/res/generated/debug" />
