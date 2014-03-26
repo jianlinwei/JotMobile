@@ -1,5 +1,6 @@
 package com.noahl98.jotmobile;
 
+import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
@@ -7,7 +8,6 @@ import android.content.res.Configuration;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.text.Editable;
@@ -27,8 +27,8 @@ import android.view.ViewTreeObserver;
 import android.view.animation.AlphaAnimation;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,15 +37,13 @@ import android.widget.ToggleButton;
 import java.io.File;
 import java.util.ArrayList;
 
-public class MainActivity extends FragmentActivity implements RichText.EditTextImeBackListener, OnTouchListener, OnClickListener, TextWatcher{
+public class MainActivity extends Activity implements RichText.EditTextImeBackListener, OnTouchListener, OnClickListener, TextWatcher{
 	private String[] drawerListViewItems1;
 	private String[] drawerListViewItems2;
     private ArrayList<Editable> undoStrings;
 
     private int undoIndex;
-	
-	//public EditText docTitle;
-	
+
 	private int styleStart;
 	
 	private ListView drawerListView1;
@@ -57,7 +55,9 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
 	private ActionBarDrawerToggle actionBarDrawerToggle;
 	private RichText richText;
 	private SaveFragment saveFragment;
-    private CreateNewDoc createNewDocFragement;
+    private CreateNewDoc createNewDocFragment;
+    private About aboutFragment;
+    private Help helpFragement;
 	
 	private ToggleButton boldButton;
 	private ToggleButton emButton;
@@ -118,6 +118,9 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
         drawerListView1.setOnItemClickListener(new DrawerItemClickListener());
         drawerListView2.setOnItemClickListener(new DrawerItemClickListener());
 
+        //sets a long click listener for the first drawer only
+        drawerListView1.setOnItemLongClickListener(new DrawerItemLongClickListener());
+
         isMainContent= true;
         alreadyShown=false;
         keyboardShown=false;
@@ -132,8 +135,14 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
         //defines save fragment
         saveFragment = new SaveFragment();
 
+        //defines aboutFragment
+        aboutFragment= new About();
+
+        //defines helpFragment
+        helpFragement= new Help();
+
         //defines createNewDocFragment
-        createNewDocFragement= new CreateNewDoc();
+        createNewDocFragment= new CreateNewDoc();
         
         //assigns richText to its XML layout and adds a TextChangeListener
         richText= (RichText)findViewById(R.id.edit_text);
@@ -568,7 +577,7 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
         imm.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
 
         isMainContent=false;
-        fragmentTransaction.add(R.id.frame, createNewDocFragement).addToBackStack(null).commit();
+        fragmentTransaction.add(R.id.frame, createNewDocFragment).addToBackStack(null).commit();
     }
 
     public void onCreateClicked(View v){
@@ -582,7 +591,7 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
         lookForFiles();
 
         //changes back to the main view
-        fragmentTransaction.remove(createNewDocFragement).commit();
+        fragmentTransaction.remove(createNewDocFragment).commit();
         isMainContent= true;
     }
 
@@ -590,7 +599,7 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        fragmentTransaction.remove(createNewDocFragement).commit();
+        fragmentTransaction.remove(createNewDocFragment).commit();
         isMainContent=true;
     }
 
@@ -598,9 +607,18 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
     //////Various other functions//////
     ///////////////////////////////////
     public void undo(){
-        Editable s = new SpannableStringBuilder(richText.getEditableText().subSequence(richText.length()-5,richText.length()));
-        richText.getEditableText().delete(richText.length()-5,richText.length());
+        Editable s;
+        if(richText.length()>=5){
+            s = new SpannableStringBuilder(richText.getEditableText().subSequence(richText.length()-5,richText.length()));
+            richText.getEditableText().delete(richText.length()-5,richText.length());
+        }else{
+            s=new SpannableStringBuilder(richText.getEditableText().subSequence(0,richText.length()));
+            richText.getEditableText().delete(0,richText.length());
+        }
 
+        if(s==null){
+            return;
+        }
         undoStrings.add(s);
         undoIndex+=1;
     }
@@ -615,8 +633,46 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
 
     @Override
     public void onBackPressed(){
-        saveFragment.onBackPressed(saveFragment);
-        isMainContent=true;
+        if(createNewDocFragment.isShowing){
+            createNewDocFragment.onBackPressed();
+            isMainContent=true;
+        }
+        if(saveFragment.isShowing){
+            saveFragment.onBackPressed();
+            isMainContent=true;
+        }
+        if(helpFragement.isShowing){
+            helpFragement.onBackPressed();
+            isMainContent=true;
+        }
+        if(aboutFragment.isShowing){
+            aboutFragment.onBackPressed();
+            isMainContent=true;
+        }
+        super.onBackPressed();
+
+    }
+
+    public void launchAbout(){
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        InputMethodManager imm = (InputMethodManager) this.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+
+        isMainContent=false;
+        fragmentTransaction.add(R.id.frame, aboutFragment).addToBackStack(null).commit();
+    }
+
+    public void launchHelp(){
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        InputMethodManager imm = (InputMethodManager) this.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+
+        isMainContent=false;
+        fragmentTransaction.add(R.id.frame, helpFragement).addToBackStack(null).commit();
     }
 
 
@@ -681,12 +737,67 @@ public class MainActivity extends FragmentActivity implements RichText.EditTextI
                 Toast.makeText(getApplicationContext(),"Insert Image", Toast.LENGTH_SHORT).show();
                 drawerLayout.closeDrawers();
             }else if(((TextView) nextChild).getText().equals("About Jot")){
-                Toast.makeText(getApplicationContext(),"About Jot", Toast.LENGTH_SHORT).show();
+                launchAbout();
                 drawerLayout.closeDrawers();
             }else if(((TextView) nextChild).getText().equals("Help")){
-                Toast.makeText(getApplicationContext(),"Help", Toast.LENGTH_SHORT).show();
+                launchHelp();
                 drawerLayout.closeDrawers();
             }
 		}
+    }
+
+    private class DrawerItemLongClickListener implements ListView.OnItemLongClickListener{
+        @Override
+        public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id){
+
+            View nextChild = ((ViewGroup) view).getChildAt(1);
+            final String childText = ((TextView) nextChild).getText().toString();
+
+            if(childText.equals("Save")){
+                return false;
+            }else if(childText.equals("Open")){
+                return false;
+            }else if(childText.equals("Export")){
+                return false;
+            }else if(childText.equals("Clear")){
+                return false;
+            }else if(childText.equals("New Document")){
+                return false;
+            }else{
+                File files[] = Doc.docsFolder.listFiles();
+                /*for(int i=0; i<files.length; i++){
+                    if(files[i].equals(childText)){
+                        PopupMenu popupMenu = new PopupMenu(MainActivity.this, nextChild);
+                        popupMenu.getMenuInflater().inflate(R.menu.popup_menu, popupMenu.getMenu());
+
+                        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                            @Override
+                            public boolean onMenuItemClick(MenuItem menuItem) {
+                                if(menuItem.getTitle()=="Delete"){
+                                    Doc.getFiles(childText).delete();
+                                    return true;
+                                }
+                                return false;
+                            }
+                        });
+                    }
+                }*/
+                PopupMenu popupMenu = new PopupMenu(MainActivity.this, nextChild);
+                popupMenu.getMenuInflater().inflate(R.menu.popup_menu, popupMenu.getMenu());
+
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        if (menuItem.getTitle() == "Delete") {
+                            Doc.getFiles(childText).delete();
+                            return true;
+                        }
+                        return false;
+                    }
+                });
+                Toast.makeText(getApplicationContext(), "Code has been run", Toast.LENGTH_SHORT).show();
+            }
+            return true;
+        }
     }
 }
