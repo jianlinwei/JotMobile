@@ -15,3 +15,20 @@ Jot for Android Project Information:
 -Written in Java using Android Studio
 
 -Target platform: Android KitKat (4.4) or greater
+
+------------------------------------
+Planned Features:
+------------------------------------
+-Rich text saving
+
+-Open files within the app/open recent files
+
+-Share/export files
+
+-Change page color
+
+-Bullets
+
+-Insert images
+
+-Different text sizes/colors
