@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/deleteFile"
+        android:title="Delete"/>
+
+</menu><!-- From: file:/Users/noahlutz/Documents/Android%20Dev/Jot%20Workspaces/JotMobile/res/menu/popup_menu.xml -->

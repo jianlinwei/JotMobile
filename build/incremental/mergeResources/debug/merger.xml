@@ -129,6 +129,11 @@
                 qualifiers="xxhdpi"
                 type="drawable" />
             <file
+                name="about_page"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/layout/about_page.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 name="activity_main"
                 path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/layout/activity_main.xml"
                 qualifiers=""
@@ -139,6 +144,16 @@
                 qualifiers=""
                 type="layout" />
             <file
+                name="help_page"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/layout/help_page.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="layout_create_new"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/layout/layout_create_new.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 name="layout_save"
                 path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/layout/layout_save.xml"
                 qualifiers=""
@@ -146,6 +161,11 @@
             <file
                 name="main"
                 path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/menu/main.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="popup_menu"
+                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/menu/popup_menu.xml"
                 qualifiers=""
                 type="menu" />
             <file
@@ -215,18 +235,18 @@ Help
                     </item>
                 </string-array>
 
-                <string name="hello_world" >Hello world!
-                </string>
                 <string name="drawer_open" >Open Drawer
                 </string>
-                <string name="drawer_close" >Close Drawer
+                <string name="hello_world" >Hello world!
                 </string>
-                <string name="underline" ><u>
-U
-                    </u></string>
                 <string name="strike" ><strike>
 ABC
                     </strike></string>
+                <string name="underline" ><u>
+U
+                    </u></string>
+                <string name="drawer_close" >Close Drawer
+                </string>
             </file>
             <file
                 path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/values/styles.xml"
@@ -299,26 +319,6 @@ ABC
                     <!-- API 14 theme customizations can go here. -->
                 </style>
             </file>
-            <file
-                name="layout_create_new"
-                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/layout/layout_create_new.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="popup_menu"
-                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/menu/popup_menu.xml"
-                qualifiers=""
-                type="menu" />
-            <file
-                name="about_page"
-                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/layout/about_page.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="help_page"
-                path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/res/layout/help_page.xml"
-                qualifiers=""
-                type="layout" />
         </source>
         <source path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/build/res/rs/debug" />
         <source path="/Users/noahlutz/Documents/Android Dev/Jot Workspaces/JotMobile/build/res/generated/debug" />

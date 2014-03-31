@@ -108,15 +108,11 @@ public class Doc extends File{
         return xmlString;
     }
 
-
-    //TEMPORARY for debugging
-    public static int[] evaluateSpans(){
-        int[] spans = new int[3];
-
-        spans[0]=styleSpanInt;
-        spans[1]=strikethoughSpanInt;
-        spans[2]=underlineSpanInt;
-
-        return spans;
+    public static boolean deleteFile (File file){
+        if(file.exists()){
+            file.delete();
+            return true;
+        }
+        return false;
     }
 }

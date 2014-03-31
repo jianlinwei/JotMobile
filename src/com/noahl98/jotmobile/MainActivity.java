@@ -675,7 +675,11 @@ public class MainActivity extends Activity implements RichText.EditTextImeBackLi
         fragmentTransaction.add(R.id.frame, helpFragement).addToBackStack(null).commit();
     }
 
-
+    @Override
+    public void onResume(){
+        super.onResume();
+        lookForFiles();
+    }
 
     ////////////////////
     //////NOT USED//////
@@ -782,20 +786,24 @@ public class MainActivity extends Activity implements RichText.EditTextImeBackLi
                         });
                     }
                 }*/
-                PopupMenu popupMenu = new PopupMenu(MainActivity.this, nextChild);
+                PopupMenu popupMenu = new PopupMenu(getApplicationContext(), nextChild);
                 popupMenu.getMenuInflater().inflate(R.menu.popup_menu, popupMenu.getMenu());
 
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
-                        if (menuItem.getTitle() == "Delete") {
-                            Doc.getFiles(childText).delete();
+                        if (menuItem.getTitle().equals("Delete")) {
+                            File tempFile = Doc.getFiles(childText);
+                            if(Doc.deleteFile(tempFile)){
+                                Toast.makeText(getApplicationContext(), "This code is being run", Toast.LENGTH_SHORT).show();
+                            }
+                            lookForFiles();
                             return true;
                         }
                         return false;
                     }
                 });
-                Toast.makeText(getApplicationContext(), "Code has been run", Toast.LENGTH_SHORT).show();
+                popupMenu.show();
             }
             return true;
         }
