@@ -675,6 +675,10 @@ public class MainActivity extends Activity implements RichText.EditTextImeBackLi
         fragmentTransaction.add(R.id.frame, helpFragement).addToBackStack(null).commit();
     }
 
+    public void openFile(){
+
+    }
+
     @Override
     public void onResume(){
         super.onResume();
@@ -715,6 +719,7 @@ public class MainActivity extends Activity implements RichText.EditTextImeBackLi
 				onSaveBtnClick();
 			}else if(((TextView) nextChild).getText().equals("Open")){
                 Toast.makeText(getApplicationContext(),"Open", Toast.LENGTH_SHORT).show();
+
                 drawerLayout.closeDrawers();
             }else if(((TextView) nextChild).getText().equals("Export")){
                 Toast.makeText(getApplicationContext(),"Export", Toast.LENGTH_SHORT).show();
